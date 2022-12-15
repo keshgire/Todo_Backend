@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+<style>
+    form,h2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    a{
+        text-decoration: none;
+        
+        padding: 2px;
+        margin-left: 10px;
+        color: red;
+
+    }
+</style>
+</head>
+
+<body>
+    <h2>ToDo List</h2>
+
+    <div>
+
+        <form action="/add/todo" method="post">
+
+            <input type="text" name="todo" placeholder="Enter Todo">
+            <input type="submit" value="add">
+
+
+        </form>
+
+
+    </div>
+        <div>
+
+            <ol>
+
+                <% todo.forEach(todos=>{ %>
+                    <li><%= todos.todo %> <a href="/delete/todo/<%= todos._id %>">Delete</a></li>
+                    
+               <% }) %>
+ 
+            </ol>
+
+        </div>
+
+
+</body>
+</html>
